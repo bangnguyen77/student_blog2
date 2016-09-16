@@ -13,6 +13,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'capybara', '~> 2.8', '>= 2.8.1'
+gem 'factory_girl', '~> 4.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -20,6 +22,8 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'
+
+  gem 'simplecov', require: false
 end
 
 group :development do
