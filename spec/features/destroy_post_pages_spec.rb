@@ -7,8 +7,8 @@ describe 'the delete a post process' do
     visit new_user_session_path
     fill_in 'Email', :with => 'abc@xyz.com'
     fill_in 'Password', :with => 'password'
-    click_on 'Sign In'
-    visit post_path
+    click_on 'Sign in'
+    visit post_path(post)
     click_on 'Delete'
     expect(page).to have_no_content(post.title)
   end

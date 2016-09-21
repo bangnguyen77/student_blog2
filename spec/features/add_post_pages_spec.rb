@@ -7,12 +7,12 @@ describe "the add a post process" do
     visit new_user_session_path
     fill_in 'Email', :with => 'abc@xyz.com'
     fill_in 'Password', :with => 'password'
-    click_on 'Sign In'
+    click_on 'Sign in'
     click_on "New Post"
     fill_in "Title", :with => "First post"
     fill_in "Content", :with => "Blah aha"
-    click_on "Create Post"
-    expect(page).to have_content "Blah aha"
+    click_on "create_post"
+    expect(page).to have_content "First post"
   end
 
   it "gives an error if a field is blank" do
@@ -21,11 +21,11 @@ describe "the add a post process" do
     visit new_user_session_path
     fill_in 'Email', :with => 'abc@xyz.com'
     fill_in 'Password', :with => 'password'
-    click_on 'Sign In'
+    click_on 'Sign in'
     click_on "New Post"
     visit edit_post_path(post)
-    fill_in "Image", :with => ""
-    click_on "Create Post"
-    expect(page).to have_content 'errors'
+    fill_in "Title", :with => ""
+    click_on 'create_post'
+    expect(page).to have_content 'error'
   end
 end
