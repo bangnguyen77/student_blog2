@@ -9,9 +9,8 @@ describe "the add a post process" do
     fill_in 'Password', :with => 'password'
     click_on 'Sign In'
     click_on "New Post"
-    fill_in "Image", :with => "something"
-    fill_in "* Title", :with => "First post"
-    fill_in "* Content", :with => "Blah aha"
+    fill_in "Title", :with => "First post"
+    fill_in "Content", :with => "Blah aha"
     click_on "Create Post"
     expect(page).to have_content "Blah aha"
   end
