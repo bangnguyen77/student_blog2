@@ -9,6 +9,7 @@ describe "the add a post process" do
     fill_in 'Password', :with => 'password'
     click_on 'Sign in'
     click_on "New Post"
+    attach_file 'Image', 'spec/asset_specs/images/cat.jpg'
     fill_in "Title", :with => "First post"
     fill_in "Content", :with => "Blah aha"
     click_on "create_post"
